@@ -6,7 +6,7 @@ import { getAllContacts } from './../redux/contacts/contacts-selectors';
 
 import warningMessage from 'utils/warningMessage';
 import { Oval } from 'react-loader-spinner';
-import css from './Form.module.css';
+import styles from './Form.module.scss';
 
 export default function Form({ onSubmit }) {
   const [name, setName] = useState('');
@@ -18,7 +18,7 @@ export default function Form({ onSubmit }) {
 
   const dispatch = useDispatch();
 
-  const handleInputCange = e => {
+  const handleInputChange = e => {
     const { name, value } = e.currentTarget;
 
     switch (name) {
@@ -72,11 +72,11 @@ export default function Form({ onSubmit }) {
   };
 
   return (
-    <form className={css.contactForm} onSubmit={handleSubmit}>
-      <label className={css.contactForm__label}>
+    <form className={styles.contactForm} onSubmit={handleSubmit}>
+      <label className={styles.contactForm__label}>
         Name
         <input
-          className={css.contactForm__input}
+          className={styles.contactForm__input}
           type="text"
           name="name"
           autoComplete="off"
@@ -84,13 +84,13 @@ export default function Form({ onSubmit }) {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
-          onChange={handleInputCange}
+          onChange={handleInputChange}
         />
       </label>
-      <label className={css.contactForm__label}>
+      <label className={styles.contactForm__label}>
         Number
         <input
-          className={css.contactForm__input}
+          className={styles.contactForm__input}
           type="tel"
           name="phone"
           autoComplete="off"
@@ -98,13 +98,13 @@ export default function Form({ onSubmit }) {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-          onChange={handleInputCange}
+          onChange={handleInputChange}
         />
       </label>
-      <button type="submit" className={css.contactForm__btn}>
+      <button type="submit" className={styles.contactForm__btn}>
         {loading ? (
           <Oval
-            className={css.loader}
+            className={styles.loader}
             height="20"
             width="20"
             color="#ffa229"

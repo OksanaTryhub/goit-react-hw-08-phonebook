@@ -1,16 +1,21 @@
+import UserRoutes from 'components/UserRoutes';
+import Navbar from 'components/Navbar/Navbar';
 import Form from './components/Form/Form';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from './components/Filter/Filter';
 
-import css from './App.module.css';
+import styles from './App.module.scss';
 
 const App = () => (
-  <div className={css.phonebook}>
-    <h1 className={css.phonebook__title}> Phonebook</h1>
-    <Form />
-    <h2 className={css.phonebook__subtitle}>Contacts</h2>
+  <div className={styles.phonebook}>
+    <Navbar />
+    <UserRoutes />
+
+    {/* <h1 className={styles.phonebook__title}> Phonebook</h1> */}
+    {/* <Form />
+    <h2 className={styles.phonebook__subtitle}>Contacts</h2>
     <Filter />
-    <ContactList />
+    <ContactList /> */}
   </div>
 );
 

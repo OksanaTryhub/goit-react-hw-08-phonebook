@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 41px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 22px;
+  margin-left: auto;
+  margin-top: 18px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: 1.5px solid var(--accent-color);
+    color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 480px) {
+    width: 150px;
+    height: 41px;
+    font-size: 14px;
+    margin-right: auto;
+  }
+}

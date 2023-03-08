@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import css from './SvgIcon.module.css';
+import styles from './SvgIconTrash.module.scss';
 
-const SvgIcon = ({ id }) => {
+const SvgIconTrash = ({ id }) => {
   switch (id) {
-    case 'svg':
+    case 'trash':
       return (
         <svg
-          className={css.icon}
+          className={styles.icon}
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
@@ -22,8 +22,8 @@ const SvgIcon = ({ id }) => {
   }
 };
 
-export default SvgIcon;
+export default SvgIconTrash;
 
-SvgIcon.propTypes = {
+SvgIconTrash.propTypes = {
   id: PropTypes.string.isRequired,
 };

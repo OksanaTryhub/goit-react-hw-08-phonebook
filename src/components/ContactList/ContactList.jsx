@@ -8,9 +8,9 @@ import {
   fetchDeleteContact,
 } from 'components/redux/contacts/contacts-operations';
 
-import SvgIcon from '../SvgIcon/SvgIcon';
+import SvgIconTrash from '../SvgIcon/SvgIconTrash';
 import { Oval } from 'react-loader-spinner';
-import css from './ContactList.module.css';
+import styles from './ContactList.module.scss';
 
 export default function ContactList() {
   const [loadingContacts, setLoadingContacts] = useState(true);
@@ -48,23 +48,23 @@ export default function ContactList() {
           visible={true}
         />
       ) : (
-        <ul className={css.contactList}>
+        <ul className={styles.contactList}>
           {filteredContacts.map(({ id, name, phone }) => (
-            <li key={id} className={css.contactList__item}>
-              <p className={css.contactList__name}>{name}: </p>
-              <p className={css.contactList__number}>{phone}</p>
+            <li key={id} className={styles.contactList__item}>
+              <p className={styles.contactList__name}>{name}: </p>
+              <p className={styles.contactList__number}>{phone}</p>
 
               {!loading[id] ? (
                 <button
-                  className={css.contactList__deleteBtn}
+                  className={styles.contactList__deleteBtn}
                   onClick={() => {
                     handleDeleteContact(id);
                   }}
                 >
-                  <SvgIcon id="svg" />
+                  <SvgIconTrash id="trash" />
                 </button>
               ) : (
-                <div className={css.loader}>
+                <div className={styles.loader}>
                   <Oval
                     height="16"
                     width="16"
