@@ -1,1 +1,1 @@
-React Homework module 7 - Asynchronous Redux - Phonebook
+React Homework module 8 - Authentication. Authorization - Phonebook
