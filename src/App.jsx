@@ -1,8 +1,8 @@
 import UserRoutes from 'components/UserRoutes';
 import Navbar from 'components/Navbar/Navbar';
-import Form from './components/Form/Form';
-import ContactList from 'components/ContactList/ContactList';
-import Filter from './components/Filter/Filter';
+// import Form from './components/Form/Form';
+// import ContactList from 'components/ContactList/ContactList';
+// import Filter from './components/Filter/Filter';
 
 import styles from './App.module.scss';
 
