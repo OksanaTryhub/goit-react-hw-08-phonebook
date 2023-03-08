@@ -5,12 +5,14 @@ import { fetchAddContact } from 'components/redux/contacts/contacts-operations';
 import { getAllContacts } from './../redux/contacts/contacts-selectors';
 
 import warningMessage from 'utils/warningMessage';
+import { Oval } from 'react-loader-spinner';
 import css from './Form.module.css';
 
 export default function Form({ onSubmit }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [warning, setWarning] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const contacts = useSelector(getAllContacts);
 
@@ -48,16 +50,18 @@ export default function Form({ onSubmit }) {
     return Boolean(result);
   };
 
-  const handleAddContact = ({ name, phone }) => {
+  const handleAddContact = async ({ name, phone }) => {
+    setLoading(true);
     if (isDublicate(name)) {
       setWarning(true);
-
+      setLoading(false);
       warningMessage(name);
       return;
     }
-    dispatch(fetchAddContact({ name, phone }));
+    await dispatch(fetchAddContact({ name, phone }));
     setWarning(false);
     resetForm();
+    setLoading(false);
     console.log(warning);
   };
 
@@ -98,7 +102,23 @@ export default function Form({ onSubmit }) {
         />
       </label>
       <button type="submit" className={css.contactForm__btn}>
-        Add contact
+        {loading ? (
+          <Oval
+            className={css.loader}
+            height="20"
+            width="20"
+            color="#ffa229"
+            secondaryColor="#ffa229"
+            strokeWidth={6}
+            ariaLabel="tail-spin-loading"
+            radius="1"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        ) : (
+          'Add contact'
+        )}
       </button>
     </form>
   );
