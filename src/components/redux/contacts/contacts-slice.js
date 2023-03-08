@@ -6,8 +6,6 @@ import {
   fetchDeleteContact,
 } from './contacts-operations';
 
-// import * as actions from './contacts-actions';
-
 const initialState = {
   items: [],
   loading: false,
