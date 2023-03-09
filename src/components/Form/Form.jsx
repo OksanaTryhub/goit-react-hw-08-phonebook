@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchAddContact } from 'components/redux/contacts/contacts-operations';
-import { getAllContacts } from './../redux/contacts/contacts-selectors';
+import { fetchAddContact } from 'redux/contacts/contacts-operations';
+import { getAllContacts } from 'redux/contacts/contacts-selectors';
 
 import warningMessage from 'utils/warningMessage';
 import { Oval } from 'react-loader-spinner';
@@ -10,7 +10,7 @@ import styles from './Form.module.scss';
 
 export default function Form({ onSubmit }) {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const [warning, setWarning] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -26,8 +26,8 @@ export default function Form({ onSubmit }) {
         setName(value);
         break;
 
-      case 'phone':
-        setPhone(value);
+      case 'number':
+        setNumber(value);
         break;
 
       default:
@@ -37,7 +37,7 @@ export default function Form({ onSubmit }) {
 
   const resetForm = () => {
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   const isDublicate = name => {
@@ -50,7 +50,7 @@ export default function Form({ onSubmit }) {
     return Boolean(result);
   };
 
-  const handleAddContact = async ({ name, phone }) => {
+  const handleAddContact = async ({ name, number }) => {
     setLoading(true);
     if (isDublicate(name)) {
       setWarning(true);
@@ -58,7 +58,7 @@ export default function Form({ onSubmit }) {
       warningMessage(name);
       return;
     }
-    await dispatch(fetchAddContact({ name, phone }));
+    await dispatch(fetchAddContact({ name, number }));
     setWarning(false);
     resetForm();
     setLoading(false);
@@ -68,7 +68,7 @@ export default function Form({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
 
-    onSubmit = handleAddContact({ name, phone });
+    onSubmit = handleAddContact({ name, number });
   };
 
   return (
@@ -92,9 +92,9 @@ export default function Form({ onSubmit }) {
         <input
           className={styles.contactForm__input}
           type="tel"
-          name="phone"
+          name="number"
           autoComplete="off"
-          value={phone}
+          value={number}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required

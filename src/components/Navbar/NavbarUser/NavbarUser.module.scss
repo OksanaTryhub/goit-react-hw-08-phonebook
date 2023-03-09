@@ -1,0 +1,28 @@
+// eslint-disable-next-line
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  @media screen and (min-width: 480px) {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+.title {
+  font-weight: bold;
+}
+
+.link {
+  display: inline-block;
+  position: relative;
+  margin: 0 5px;
+  text-decoration: none;
+  color: var(--text-color);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}

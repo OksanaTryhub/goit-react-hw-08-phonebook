@@ -7,10 +7,9 @@ const NavbarAuth = () => {
     <div className={styles.navbarAuth}>
       <NavLink to="/register" className={styles.link}>
         Sign up
-      </NavLink>{' '}
+      </NavLink>
       |
       <NavLink to="/login" className={styles.link}>
-        {' '}
         Sign in
       </NavLink>
     </div>

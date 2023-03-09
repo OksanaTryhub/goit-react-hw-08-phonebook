@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getFilteredContacts } from 'components/redux/filter/filter-selectors';
+import { getFilteredContacts } from 'redux/filter/filter-selectors';
 
 import {
   fetchAllContacts,
   fetchDeleteContact,
-} from 'components/redux/contacts/contacts-operations';
+} from 'redux/contacts/contacts-operations';
 
 import SvgIconTrash from '../SvgIcon/SvgIconTrash';
 import { Oval } from 'react-loader-spinner';
@@ -49,10 +49,10 @@ export default function ContactList() {
         />
       ) : (
         <ul className={styles.contactList}>
-          {filteredContacts.map(({ id, name, phone }) => (
+          {filteredContacts.map(({ id, name, number }) => (
             <li key={id} className={styles.contactList__item}>
               <p className={styles.contactList__name}>{name}: </p>
-              <p className={styles.contactList__number}>{phone}</p>
+              <p className={styles.contactList__number}>{number}</p>
 
               {!loading[id] ? (
                 <button

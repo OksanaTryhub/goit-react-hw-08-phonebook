@@ -1,10 +1,21 @@
-// import styles from './LoginPage.module.scss';
+import { useDispatch } from 'react-redux';
+
+import { login } from 'redux/auth/auth-operations';
+
 import LoginForm from './../../components/LoginForm/LoginForm';
 
+// import styles from './LoginPage.module.scss';
+
 const LoginPage = () => {
+  const dispatch = useDispatch();
+
+  const handleLogin = data => {
+    dispatch(login(data));
+  };
+
   return (
     <div>
-      <LoginForm />
+      <LoginForm onSubmit={handleLogin} />
     </div>
   );
 };
