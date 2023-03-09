@@ -1,4 +1,4 @@
-import styles from './FilterContactsPage.module.scss';
+import Filter from 'components/Filter/Filter';
 
 const FilterContactsPage = () => {
   return (
