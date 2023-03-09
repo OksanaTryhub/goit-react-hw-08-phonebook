@@ -1,10 +1,7 @@
 import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import ContactList from 'components/ContactList/ContactList';
-import AddContactPage from 'pages/AddContactPage/AddContactPage';
 import Button from 'shared/components/Button/Button';
-
-import FilterContactsPage from './../FilterContactsPage/FilterContactsPage';
 
 import styles from './ContactsPage.module.scss';
 const ContactsPage = () => {
@@ -22,8 +19,7 @@ const ContactsPage = () => {
       <Suspense>
         <Outlet />
       </Suspense>
-      {/* <AddContactPage />
-      <FilterContactsPage /> */}
+
       <h1 className={styles.title}>Contacts</h1>
       <ContactList />
     </div>
