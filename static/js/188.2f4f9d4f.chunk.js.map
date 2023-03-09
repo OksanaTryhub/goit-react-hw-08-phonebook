@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/188.2f4f9d4f.chunk.js","mappings":"iKAMA,UAJuB,WACrB,OAAO,2CACR,C","sources":["pages/AddContactPage/AddContactPage.jsx"],"sourcesContent":["// import styles from './AddContactPage.module.scss';\n\nconst AddContactPage = () => {\n  return <div>AddContactPage</div>;\n};\n\nexport default AddContactPage;\n"],"names":[],"sourceRoot":""}
