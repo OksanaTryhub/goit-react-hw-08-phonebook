@@ -8,7 +8,6 @@ const fields = {
     placeholder: 'Enter email',
   },
   password: {
-    type: 'password',
     name: 'password',
     required: true,
     label: 'Password',

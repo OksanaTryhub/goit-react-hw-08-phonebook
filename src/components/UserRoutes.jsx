@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
 
+import LoadingIndicator from './../shared/components/LoadingIndicator';
+
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
 const AddContactPage = lazy(() =>
@@ -16,7 +18,7 @@ const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
 
 const UserRoutes = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingIndicator width="70" height="70" />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
 

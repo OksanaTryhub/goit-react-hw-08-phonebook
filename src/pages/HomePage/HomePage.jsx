@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SvgIconBook from '../../components/SvgIcon/SvgIconBook';
+
 import styles from './HomePage.module.scss';
 
 const HomePage = () => {

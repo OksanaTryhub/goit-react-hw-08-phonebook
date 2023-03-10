@@ -50,3 +50,25 @@
     border-radius: 2px;
   }
 }
+
+.iconInput_wrap {
+  position: relative;
+  &:hover label {
+    color: var(--accent-color);
+  }
+  &:hover input {
+    outline: 1.5px solid var(--accent-color);
+  }
+}
+
+.icon_wrap {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  top: 43%;
+  right: 15px;
+  padding: 0;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+}

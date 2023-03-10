@@ -1,0 +1,15 @@
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  stroke: #000000;
+  cursor: pointer;
+  // visibility: hidden;
+}
+
+.icon:hover {
+  stroke: var(--accent-color);
+}

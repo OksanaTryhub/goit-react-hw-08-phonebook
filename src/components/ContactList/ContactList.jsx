@@ -9,7 +9,7 @@ import {
 } from 'redux/contacts/contacts-operations';
 
 import SvgIconTrash from '../SvgIcon/SvgIconTrash';
-import { Oval } from 'react-loader-spinner';
+import LoadingIndicator from 'shared/components/LoadingIndicator';
 import styles from './ContactList.module.scss';
 
 export default function ContactList() {
@@ -35,18 +35,7 @@ export default function ContactList() {
   return (
     <>
       {loadingContacts ? (
-        <Oval
-          height="50"
-          width="50"
-          color="#ffa229"
-          secondaryColor="#ffa229"
-          strokeWidth={6}
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
+        <LoadingIndicator width="50" height="50" />
       ) : (
         <ul className={styles.contactList}>
           {filteredContacts.map(({ id, name, number }) => (
@@ -65,18 +54,7 @@ export default function ContactList() {
                 </button>
               ) : (
                 <div className={styles.loader}>
-                  <Oval
-                    height="16"
-                    width="16"
-                    color="#ffa229"
-                    secondaryColor="#ffa229"
-                    strokeWidth={6}
-                    ariaLabel="tail-spin-loading"
-                    radius="1"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                    visible={true}
-                  />
+                  <LoadingIndicator width="16" height="16" />
                 </div>
               )}
             </li>
