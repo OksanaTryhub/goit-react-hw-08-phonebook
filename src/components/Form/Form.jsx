@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAddContact } from 'redux/contacts/contacts-operations';
 import { getAllContacts } from 'redux/contacts/contacts-selectors';
 
-import warningMessage from 'utils/warningMessage';
+import { contactExistMessage } from 'utils/warningMessage';
 import { Oval } from 'react-loader-spinner';
 import styles from './Form.module.scss';
 
@@ -55,7 +55,7 @@ export default function Form({ onSubmit }) {
     if (isDublicate(name)) {
       setWarning(true);
       setLoading(false);
-      warningMessage(name);
+      contactExistMessage(name);
       return;
     }
     await dispatch(fetchAddContact({ name, number }));

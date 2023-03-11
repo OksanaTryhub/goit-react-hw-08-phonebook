@@ -15,6 +15,7 @@ const FilterContactsPage = lazy(() =>
 );
 const RegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 const UserRoutes = () => {
   return (
@@ -34,7 +35,7 @@ const UserRoutes = () => {
           </Route>
         </Route>
 
-        <Route path="*" element={<HomePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );

@@ -1,0 +1,10 @@
+.icon {
+  width: 200px;
+  height: 200px;
+  fill: var(--accent-color);
+
+  @media screen and (min-width: 768px) {
+    width: 280px;
+    height: 280px;
+  }
+}
